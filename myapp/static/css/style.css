@@ -1,0 +1,234 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    position: relative;
+}
+
+header {
+    background-color: #ffffffee;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    position: relative;
+}
+
+.logo {
+    width: 100px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    z-index: 1; /* Ensure logo is above other elements */
+}
+
+.title {
+    text-align: center;
+    margin-top: 10px;
+    z-index: 1; /* Ensure title is above other elements */
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1; /* Ensure menu toggle is above other elements */
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+/* Style for the nested menu */
+/* style.css */
+
+/* Ensure the parent li is positioned relative */
+.menu ul li.nested-menu {
+    position: relative;
+}
+
+/* Style the submenu */
+.submenu {
+    display: none; /* Initially hide the submenu */
+    position: absolute;
+    top: calc(100% + 10px); /* Position below the parent li with a small gap */
+    left: 0;
+    background-color: #fff; /* Background color of the submenu */
+    border: 1px solid #ccc; /* Border of the submenu */
+    padding: 10px;
+    z-index: 1; /* Ensure submenu appears above other elements */
+}
+
+/* Show the submenu when its parent li is hovered */
+.menu ul li.nested-menu:hover .submenu {
+    display: block;
+}
+
+/* Style the nested menu items */
+.submenu li {
+    list-style: none; /* Remove default list styles */
+}
+
+.submenu li a {
+    display: block; /* Make submenu items block-level */
+    padding: 8px 12px; /* Add padding to the submenu items */
+    color: #333333; /* Text color of the submenu items */
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Style for submenu item on hover */
+.submenu li a:hover {
+    background-color: #f5f5f5; /* Background color of submenu item on hover */
+}
+
+
+.menu a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #a82c2c;
+}
+
+.main {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.company-info {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.section-info {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.room {
+    width: 50%;
+    height: 300px;
+    position: relative;
+    background-color: #ccc;
+    margin: 0 auto; /* Center the room horizontally */
+    overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+/* Ensure doors and dot are positioned correctly */
+.door-bottom {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 25px 25px 60px; /* Adjust size as needed */
+    border-color: transparent transparent #fff transparent; /* Adjust color as needed */
+    bottom: 0; /* Position at bottom of the room */
+    left: 35%; /* Position horizontally centered */
+    transform: translateX(-50%); /* Center horizontally */
+    z-index: 2; /* Ensure door is above walls */
+}
+
+
+
+.door-left {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 60px 25px 0 0; /* Adjust size as needed */
+    border-color: #fff transparent transparent transparent; /* Adjust color as needed */
+    top: calc(50% - 10px); /* Position vertically centered */
+    left: 0; /* Position at left edge of the room */
+    z-index: 2; /* Ensure door is above walls */
+}
+
+
+.dot {
+    position: absolute;
+    background-color: #000; /* Adjust color as needed */
+    width: 10px; /* Adjust size as needed */
+    height: 10px; /* Adjust size as needed */
+    border-radius: 50%; /* Make it a circle */
+    top: 50%; /* Position vertically centered */
+    left: 50%; /* Position horizontally centered */
+    transform: translate(-50%, -50%); /* Center dot */
+    z-index: 5; /* Ensure dot is above walls and doors */
+}
+
+
+.wall {
+    position: absolute;
+    background-color: #fff;
+}
+
+.wall-top {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px; /* Height of the top wall */
+}
+
+.wall-bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px; /* Height of the bottom wall */
+}
+
+.wall-left {
+    top: 0;
+    left: 0;
+    width: 20px; /* Width of the left wall */
+    height: 100%; /* Height of the left wall */
+}
+
+/* CSS for menu button animation */
+#menu-button {
+    display: inline-block; /* Ensure it's displayed as a block-level element */
+    padding: 5px 10px; /* Add padding for better clickability */
+    font-size: 20px; /* Adjust font size as needed */
+    text-decoration: none; /* Remove underline from link */
+    color: #333; /* Set color for the bars */
+    transition: transform 0.3s ease-in-out; /* Add smooth transition */
+}
+
+
+/* Define animation for active state */
+#menu-button.active {
+    transform: rotate(90deg); /* Rotate the menu button */
+}
+
+.floor-map-container {
+    position: relative;
+}

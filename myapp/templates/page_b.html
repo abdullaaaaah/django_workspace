@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indoor Position Monitoring</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <!-- Include FontAwesome library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- JavaScript for menu toggle -->
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.submenu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="http://127.0.0.1:8000/">
+            <img src="{% static 'company_logo.png' %}" alt="Company Logo" class="logo">
+            </a>
+            <h1 class="title">Indoor Position Monitoring</h1>
+            <nav class="menu">
+                <ul>
+                    <li><a href="https://tpltrakker.com/about-us/">About</a></li>
+                    <li><a href="https://tpltrakker.com/solution/">Services</a></li>
+                    <li><a href="https://tpltrakker.com/contact-us/">Contact</a></li>
+                    <li class="nested-menu">
+                        <!-- Add an ID to the button for easier access -->
+                        <a id="menu-button" href="#" onclick="toggleMenu()"><i class="fas fa-bars"></i></a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'page_a' %}">Site1</a></li>
+                            <li><a href="{% url 'page_b' %}">Site2</a></li>
+                            <li><a href="{% url 'page_c' %}">Site3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">&#9776;</div> <!-- Menu toggle button -->
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="floor-map-container">
+                <img src="{% static 'floor_map.png' %}" alt="Floor Map" class="floor-map">
+                <div class="dot"></div> <!-- Dot marker -->
+            </div>
+        </div>
+    </main>
+    <footer>
+        <!-- Footer content remains the same -->
+    </footer>
+</body>
+</html>
